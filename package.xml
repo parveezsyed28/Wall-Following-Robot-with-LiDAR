@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>wall_follower_bot</name>
+  <version>0.0.0</version>
+  <description>Wall follower botsimulation using ROS 2 and Gazebo</description>
+  <maintainer email="parveezbanu.s@gmail.com">parveez</maintainer>
+
+  <license>Apache License 2.0</license>
+
+  <buildtool_depend>ament_python</buildtool_depend>
+
+  <!-- Python and ROS dependencies -->
+  <exec_depend>rclpy</exec_depend>
+  <exec_depend>geometry_msgs</exec_depend>
+  <exec_depend>sensor_msgs</exec_depend>
+  <exec_depend>std_msgs</exec_depend>
+  <exec_depend>nav_msgs</exec_depend>
+
+  <!-- Launch system -->
+  <exec_depend>launch</exec_depend>
+  <exec_depend>launch_ros</exec_depend>
+
+  <!-- URDF/Xacro -->
+  <exec_depend>xacro</exec_depend>
+
+  <!-- Gazebo simulation -->
+  <exec_depend>gazebo_ros</exec_depend>
+
+  <!-- Visualization -->
+  <exec_depend>robot_state_publisher</exec_depend>
+  <exec_depend>rviz2</exec_depend>
+
+  <!-- Required for ament_python packages -->
+  <test_depend>ament_lint_auto</test_depend>
+  <test_depend>ament_lint_common</test_depend>
+
+  <export>
+    <build_type>ament_python</build_type>
+  </export>
+</package>

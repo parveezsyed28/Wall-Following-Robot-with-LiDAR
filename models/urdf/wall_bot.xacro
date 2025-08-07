@@ -1,0 +1,159 @@
+<?xml version="1.0" ?>
+<robot name="wall_bot" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:include filename="$(find wall_follower_bot)/models/urdf/materials.xacro"/>
+  <xacro:include filename="$(find wall_follower_bot)/models/urdf/wall_bot.gazebo" />
+
+  
+  <!-- Base Link -->
+  <link name="base_link">
+    <inertial>
+      <origin xyz="0.0029 0.0 0.032" rpy="0 0 0"/>
+      <mass value="0.835"/>
+      <inertia ixx="0.0015" iyy="0.0024" izz="0.0038" ixy="0.0" iyz="0.0" ixz="-1.2e-05"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="$(find wall_follower_bot)/models/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="grey"/>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="$(find wall_follower_bot)/models/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <gazebo reference="base_link">
+    <material>Gazebo/grey</material>
+  </gazebo>
+
+  <!-- Right Wheel -->
+  <link name="right_wheel_1">
+    <inertial>
+      <origin xyz="0 -0.0125 0.0" rpy="0 0 0"/>
+      <mass value="0.0082"/>
+      <inertia ixx="2e-06" ixy="0.0" ixz="0.0" iyy="4e-06" iyz="0.0" izz="2e-06"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.065 0.085 -0.03" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="$(find wall_follower_bot)/models/meshes/right_wheel_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="grey"/>
+    </visual>
+    <collision>
+      <origin xyz="0.065 0.085 -0.03" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="$(find wall_follower_bot)/models/meshes/right_wheel_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <gazebo reference="right_wheel_1">
+    <material>Gazebo/grey</material>
+  </gazebo>
+
+  <!-- Left Wheel -->
+  <link name="left_wheel_1">
+    <inertial>
+      <origin xyz="0 0.0125 0.0" rpy="0 0 0"/>
+      <mass value="0.0082"/>
+      <inertia ixx="2e-06" ixy="0.0" ixz="0.0" iyy="4e-06" iyz="0.0" izz="2e-06"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.065 -0.085 -0.03" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="$(find wall_follower_bot)/models/meshes/left_wheel_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="grey"/>
+    </visual>
+    <collision>
+      <origin xyz="0.065 -0.085 -0.03" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="$(find wall_follower_bot)/models/meshes/left_wheel_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <gazebo reference="left_wheel_1">
+    <material>Gazebo/grey</material>
+  </gazebo>
+
+  <!-- Castor -->
+  <link name="castor_1">
+    <inertial>
+      <origin xyz="-0.03 0.0 -0.00675" rpy="0 0 0"/>
+      <mass value="0.069"/>
+      <inertia ixx="5e-06" ixy="0.0" ixz="0.0" iyy="5e-06" iyz="0.0" izz="7e-06"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.1 -0.0 -0.0175" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="$(find wall_follower_bot)/models/meshes/castor_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="grey"/>
+    </visual>
+    <collision>
+      <origin xyz="-0.1 -0.0 -0.0175" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="$(find wall_follower_bot)/models/meshes/castor_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <!-- Lidar -->
+  <link name="lidar_1">
+    <inertial>
+      <origin xyz="0.0 0.0 0.005" rpy="0 0 0"/>
+      <mass value="0.222"/>
+      <inertia ixx="5.2e-05" ixy="0.0" ixz="0.0" iyy="5.2e-05" iyz="0.0" izz="0.0001"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.0 -0.0 -0.0675" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="$(find wall_follower_bot)/models/meshes/lidar_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="grey"/>
+    </visual>
+    <collision>
+      <origin xyz="-0.0 -0.0 -0.0675" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="$(find wall_follower_bot)/models/meshes/lidar_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <!-- Joints -->
+  <joint name="right_wheel_joint" type="continuous">
+    <origin xyz="-0.065 -0.085 0.03" rpy="0 0 0"/>
+    <parent link="base_link"/>
+    <child link="right_wheel_1"/>
+    <axis xyz="0.0 1.0 0.0"/>
+  </joint>
+
+  <joint name="left_wheel_joint" type="continuous">
+    <origin xyz="-0.065 0.085 0.03" rpy="0 0 0"/>
+    <parent link="base_link"/>
+    <child link="left_wheel_1"/>
+    <axis xyz="0.0 1.0 0.0"/>
+  </joint>
+
+  <joint name="castor_joint" type="fixed">
+    <origin xyz="0.1 0.0 0.0175" rpy="0 0 0"/>
+    <parent link="base_link"/>
+    <child link="castor_1"/>
+  </joint>
+
+  <joint name="lidar_joint" type="fixed">
+    <origin xyz="0.0 0.0 0.0675" rpy="0 0 0"/>
+    <parent link="base_link"/>
+    <child link="lidar_1"/>
+  </joint>
+
+</robot>
+
+
