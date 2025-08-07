@@ -57,24 +57,24 @@ wall_follower_bot/
 **Installation & Setup**
 
 **Clone the repository into your ROS 2 workspace source folder**
-'''
+```
 cd ~/ros2_ws/src
 git clone https://github.com/parveezsyed28/Wall-Following-Robot-with-LiDAR.git wall_follower_bot
-'''
+```
 
 **Build the workspace**
-'''
+```
     cd ~/ros2_ws
     colcon build --packages-select wall_follower_bot
     source install/setup.bash
-'''
+```
 
 **Running the Simulation**
 
 Launch the Gazebo world with the robot and wall follower node:
-'''
+```
 ros2 launch wall_follower_bot gazebo.launch.py
-'''
+```
 This will:
 
     Start Gazebo with the maze environment (big_maze.world)
