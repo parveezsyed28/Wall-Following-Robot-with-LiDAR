@@ -21,7 +21,7 @@ The robot model is designed in URDF/Xacro with realistic physics and sensor plug
    --> Easy to extend with custom worlds or control algorithms
 
 **Project Structure**
-'''
+```
 wall_follower_bot/
 ├── launch/
 │   ├── gazebo.launch.py          # Launch Gazebo world and robot spawn
@@ -39,7 +39,7 @@ wall_follower_bot/
 ├── package.xml                  # ROS 2 package config
 ├── setup.py                    # Python package setup
 └── README.md                   # This file
-'''
+```
 
 **Prerequisites**
 
