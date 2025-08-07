@@ -24,15 +24,14 @@ The robot model is designed in URDF/Xacro with realistic physics and sensor plug
 ```
 wall_follower_bot/
 ├── launch/
-│   ├── gazebo.launch.py          # Launch Gazebo world and robot spawn
-│   └── state_publisher.launch.py # Publish robot state from URDF
+│   └── state_publisher.launch.py # Launch Gazebo and spawn robot
 ├── models/
 │   ├── meshes/                   # STL files for robot parts
 │   ├── urdf/
 │   │   ├── wall_bot.xacro        # Main robot description
 │   │   ├── wall_bot.gazebo       # Gazebo-specific plugin configs
 │   │   └── materials.xacro       # Material definitions
-├── src/
+├── wall_follower_bot/
 │   └── wall_follower_bot_node.py # Wall follower control node (Python)
 ├── worlds/
 │   └── big_maze.world            # Maze environment for Gazebo
@@ -43,9 +42,9 @@ wall_follower_bot/
 
 **Prerequisites**
 
-    Ubuntu 20.04 or later
+    Ubuntu 22.04
 
-    ROS 2 Humble Hawksbill or later installed
+    ROS 2 Humble
 
     Gazebo simulator (comes with ROS 2 desktop full installation)
 
