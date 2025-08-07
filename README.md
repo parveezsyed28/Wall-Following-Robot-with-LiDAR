@@ -133,7 +133,7 @@ This will:
 
        - Gazebo physics is enabled and no errors appear in the terminal.
 
-   2) For teleoperation, ensure the teleop node publishes to the correct cmd_vel topic.
+    2)For teleoperation, ensure the teleop node publishes to the correct cmd_vel topic.
 
     3)Use ros2 topic echo /cmd_vel to verify velocity commands.
 
