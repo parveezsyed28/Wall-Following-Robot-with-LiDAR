@@ -73,7 +73,7 @@ git clone https://github.com/parveezsyed28/Wall-Following-Robot-with-LiDAR.git w
 
 Launch the Gazebo world with the robot and wall follower node:
 ```
-ros2 launch wall_follower_bot gazebo.launch.py
+ros2 launch wall_follower_bot state_publisher.launch.py
 ```
 This will:
 
