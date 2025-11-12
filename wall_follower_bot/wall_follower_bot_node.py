@@ -14,11 +14,11 @@ class WallFollowerNode(Node):
         # Subscriber to LIDAR data
         self.lidar_sub = self.create_subscription(
             LaserScan,
-            '/ttb_lidar/out',  # Make sure this topic matches your actual robot
+            '/ttb_lidar/out',  # topic that matches my actual robot
             self.lidar_callback,
             10)
 
-        self.get_logger().info('✅ Wall Follower Node Initialized')
+        self.get_logger().info('Wall Follower Node Initialized')
 
         # Wall-following control parameters
         self.desired_right_distance = 0.5  # meters
